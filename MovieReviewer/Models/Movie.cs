@@ -11,6 +11,6 @@ namespace MovieReviewer.Models
         public string Title { get; set; }
         public string Genre { get; set; }
         public string IMDBLink { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; }
     }
 }

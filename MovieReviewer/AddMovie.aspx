@@ -18,13 +18,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Movie Review</a>
+                <a class="navbar-brand" href="Default.aspx">Movie Review</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Movie List<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Add A Movie</a></li>
+                    <li><a href="Default.aspx">Movie List</a></li>
+                    <li class="active"><a href="AddMovie.aspx">Add A Movie<span class="sr-only">(current)</span></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">Create A Review <span class="caret"></span></a>
@@ -39,6 +39,18 @@
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <form runat="server" action="Add.aspx" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="title" placeholder="Title" />
+                <input type="text" class="form-control" name="genre" placeholder="Genre" />
+                <input type="text" class="form-control" name="imdb" placeholder="IMDB Link" />
+                <input type="text" class="form-control" name="release" placeholder="Release Date" />
+            </div>
+            <input type="submit" class="btn btn-primary" value="Add" />
+        </form>
+    </div>
 
     <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="Scripts/bootstrap.js" type="text/javascript"></script>

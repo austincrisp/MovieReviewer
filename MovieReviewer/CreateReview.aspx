@@ -23,11 +23,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Movie List<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Movie List</a></li>
                     <li><a href="#">Add A Movie</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Create A Review <span class="caret"></span></a>
+                    <li class="dropdown active">
+                        <a href="CreateReview.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Create A Review <span class="caret sr-only">(current)</span></a>
                         <ul class="dropdown-menu">
                             <% foreach (var movie in Movies)
                                 { %>

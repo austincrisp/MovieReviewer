@@ -14,10 +14,25 @@ namespace MovieReviewer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            using (var db = new MovieReviewContext())
+            if (Request.Form.AllKeys.Contains("title"))
             {
-                Movies = db.Movies.ToList();
+                using (var db = new MovieReviewContext())
+                {
+                    Movies = db.Movies.ToList();
+
+                    var addMovie = new Movie
+                    {
+                        Title = Request.Form["title"],
+                        Genre = Request.Form["genre"],
+                        IMDBLink = Request.Form["imdb"],
+                        ReleaseDate = Request.Form["release"]
+                    };
+
+                    db.Movies.Add(addMovie);
+                    db.SaveChanges();
+                }
             }
+            Response.Redirect("Default.aspx");
         }
     }
 }

@@ -134,6 +134,10 @@
     <Compile Include="Migrations\201702021803051_Initial.Designer.cs">
       <DependentUpon>201702021803051_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702022324495_ChangedReleaseDateToString.cs" />
+    <Compile Include="Migrations\201702022324495_ChangedReleaseDateToString.Designer.cs">
+      <DependentUpon>201702022324495_ChangedReleaseDateToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Review.cs" />
@@ -150,6 +154,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702021803051_Initial.resx">
       <DependentUpon>201702021803051_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702022324495_ChangedReleaseDateToString.resx">
+      <DependentUpon>201702022324495_ChangedReleaseDateToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
