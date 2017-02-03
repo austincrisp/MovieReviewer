@@ -25,23 +25,13 @@
                 <ul class="nav navbar-nav">
                     <li><a href="Default.aspx">Movie List</a></li>
                     <li class="active"><a href="AddMovie.aspx">Add A Movie<span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Create A Review <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <% foreach (var movie in Movies)
-                                { %>
-                            <li><a href="CreateReview.aspx?id=<%= movie.Id %>"><%= movie.Title %></a></li>
-                            <% } %>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <form runat="server" action="Add.aspx" method="post">
+        <form runat="server" action="AddMovie.aspx" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" name="title" placeholder="Title" />
                 <input type="text" class="form-control" name="genre" placeholder="Genre" />

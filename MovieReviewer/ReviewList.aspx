@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="MovieReviewer.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReviewList.aspx.cs" Inherits="MovieReviewer.ReviewList" %>
 
 <!DOCTYPE html>
 
@@ -28,7 +28,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">Movies <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="Default.aspx">Movie List<span class="sr-only">(current)</span></a></li>
+                            <li><a href="Default.aspx">Movie List</a></li>
                             <li><a href="AddMovie.aspx">Add A Movie</a></li>
                         </ul>
                     </li>
@@ -36,7 +36,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">Reviews <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="ReviewList.aspx">Review List</a></li>
+                            <li class="active"><a href="ReviewList.aspx">Review List<span class="sr-only">(current)</span></a></li>
                             <li><a href="CreateReview.aspx">Create A Review</a></li>
                         </ul>
                     </li>
@@ -51,24 +51,24 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>Title</th>
-                    <th>Genre</th>
-                    <th>IMDB Link</th>
-                    <th>Release Date</th>
-                    <th>Write A Review</th>
+                    <th>Name</th>
+                    <th>Movie</th>
+                    <th>Rating</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Occupation</th>
                 </tr>
             </thead>
             <tbody>
-                <% foreach (var movie in Movies)
+                <% foreach (var review in Reviews)
                     { %>
                 <tr>
-                    <td><a class="btn" href="ModifyMovie.aspx?id=<%= movie.Id %>" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-                    <td id="title"><%= movie.Title %></td>
-                    <td id="genre"><%= movie.Genre %></td>
-                    <td><%= movie.IMDBLink %></td>
-                    <td><%= movie.ReleaseDate %></td>
-                    <td id="film"><a class="btn" href="CreateReview.aspx?id=<%= movie.Id %>" role="button"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a></td>
+                    <td id="title"><%= review.Name %></td>
+                    <td><%= review.Movie.Title %></td>
+                    <td><%= review.Rating %></td>
+                    <td><%= review.Age %></td>
+                    <td><%= review.Gender %></td>
+                    <td><%= review.Occupation %></td>
                 </tr>
                 <% } %>
             </tbody>

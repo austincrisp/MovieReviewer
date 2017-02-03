@@ -10,16 +10,12 @@ namespace MovieReviewer
 {
     public partial class AddMovie : System.Web.UI.Page
     {
-        public List<Movie> Movies;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Form.AllKeys.Contains("title"))
             {
                 using (var db = new MovieReviewContext())
                 {
-                    Movies = db.Movies.ToList();
-
                     var addMovie = new Movie
                     {
                         Title = Request.Form["title"],
@@ -30,9 +26,9 @@ namespace MovieReviewer
 
                     db.Movies.Add(addMovie);
                     db.SaveChanges();
+                    Response.Redirect("Default.aspx");
                 }
             }
-            Response.Redirect("Default.aspx");
         }
     }
 }

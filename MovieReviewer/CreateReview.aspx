@@ -18,27 +18,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Movie Review</a>
+                <a class="navbar-brand" href="Default.aspx">Movie Review</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Movie List</a></li>
-                    <li><a href="#">Add A Movie</a></li>
-                    <li class="dropdown active">
-                        <a href="CreateReview.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Create A Review <span class="caret sr-only">(current)</span></a>
-                        <ul class="dropdown-menu">
-                            <% foreach (var movie in Movies)
-                                { %>
-                            <li><a href="CreateReview.aspx?id=<%= movie.Id %>"><%= movie.Title %></a></li>
-                            <% } %>
-                        </ul>
-                    </li>
+                    <li><a href="Default.aspx">Movie List</a></li>
+                    <li><a href="AddMovie.aspx">Add A Movie</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <form runat="server" action="CreateReview.aspx" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Name" />
+                <input type="text" class="form-control" name="rating" placeholder="Rating (1-5)" />
+                <input type="text" class="form-control" name="age" placeholder="Age" />
+                <input type="text" class="form-control" name="gender" placeholder="Gender" />
+                <input type="text" class="form-control" name="occupation" placeholder="Occupation" />
+            </div>
+            <input type="submit" class="btn btn-primary" value="Add" />
+        </form>
+    </div>
 
     <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="Scripts/bootstrap.js" type="text/javascript"></script>

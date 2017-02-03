@@ -18,27 +18,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Movie Review</a>
+                <a class="navbar-brand" href="Default.aspx">Movie Review</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Movie List<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Add A Movie</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Create A Review <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <% foreach (var movie in Movies)
-                                { %>
-                            <li><a href="CreateReview.aspx?id=<%= movie.Id %>"><%= movie.Title %></a></li>
-                            <% } %>
-                        </ul>
-                    </li>
+                    <li><a href="Default.aspx">Movie List</a></li>
+                    <li><a href="AddMovie.aspx">Add A Movie</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <form id="form1" runat="server">
+        <div class="form-group">
+            <input class="form-control" type="text" value="<%= movieInstance.Title %>" name="title"/>
+            <input class="form-control" type="text" value="<%= movieInstance.Genre %>" name="genre" />
+            <input class="form-control" type="text" value="<%= movieInstance.IMDBLink %>" name="imdb"/>
+            <input class="form-control" type="text" value="<%= movieInstance.ReleaseDate %>" name="release" />
+            <br />
+            <input type="submit" class="btn btn-success" value="Update"/>
+        </div>
+        </form>
+    </div>
 
     <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="Scripts/bootstrap.js" type="text/javascript"></script>
