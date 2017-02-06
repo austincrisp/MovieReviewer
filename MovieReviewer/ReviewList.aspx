@@ -63,7 +63,7 @@
                 <% foreach (var review in Reviews)
                     { %>
                 <tr>
-                    <td id="title"><%= review.Name %></td>
+                    <td id="name"><%= review.Name %></td>
                     <td><%= review.Movie.Title %></td>
                     <td><%= review.Rating %></td>
                     <td><%= review.Age %></td>
