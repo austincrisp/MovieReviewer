@@ -47,14 +47,17 @@
     <div class="container">
         <form runat="server" action="CreateReview.aspx" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" name="name" placeholder="Name" />
-                <p>
-                    Movie: <%= reviewInstance.Movie.Title %>
-                </p>
-                <input type="text" class="form-control" name="rating" placeholder="Rating (1-5)" />
-                <input type="text" class="form-control" name="age" placeholder="Age" />
-                <input type="text" class="form-control" name="gender" placeholder="Gender" />
-                <input type="text" class="form-control" name="occupation" placeholder="Occupation" />
+                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.Title %>" name="title" readonly="true" />
+                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.Id %>" name="reviewId" readonly="true" />
+                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.Genre %>" name="genre" readonly="true" />
+                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.IMDBLink %>" name="imdb" readonly="true" />
+                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.ReleaseDate %>" name="release" readonly="true" />
+                <br />
+                <input class="form-control" type="text" name="name" placeholder="Name" />
+                <input class="form-control" type="text" name="rating" placeholder="Rating (1-5)" />
+                <input class="form-control" type="text" name="age" placeholder="Age" />
+                <input class="form-control" type="text" name="gender" placeholder="Gender" />
+                <input class="form-control" type="text" name="occupation" placeholder="Occupation" />
             </div>
             <input type="submit" class="btn btn-primary" value="Add" />
         </form>
