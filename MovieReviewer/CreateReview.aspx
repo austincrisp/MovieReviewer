@@ -36,7 +36,6 @@
                             aria-expanded="false">Reviews <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="ReviewList.aspx">Review List</a></li>
-                            <li><a href="CreateReview.aspx">Create A Review</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -47,11 +46,11 @@
     <div class="container">
         <form runat="server" action="CreateReview.aspx" method="post">
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.Title %>" name="title" readonly="true" />
-                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.Id %>" name="reviewId" readonly="true" />
-                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.Genre %>" name="genre" readonly="true" />
-                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.IMDBLink %>" name="imdb" readonly="true" />
-                <input class="form-control" type="text" placeholder="<%= movieInstance.Movie.ReleaseDate %>" name="release" readonly="true" />
+                <input class="form-control" type="hidden" value="<%= movieInstance.Title %>" name="title" />
+                <input class="form-control" type="hidden" value="<%= movieInstance.Id %>" name="reviewId" />
+                <input class="form-control" type="hidden" value="<%= movieInstance.Genre %>" name="genre" />
+                <input class="form-control" type="hidden" value="<%= movieInstance.IMDBLink %>" name="imdb" />
+                <input class="form-control" type="hidden" value="<%= movieInstance.ReleaseDate %>" name="release" />
                 <br />
                 <input class="form-control" type="text" name="name" placeholder="Name" />
                 <input class="form-control" type="text" name="rating" placeholder="Rating (1-5)" />

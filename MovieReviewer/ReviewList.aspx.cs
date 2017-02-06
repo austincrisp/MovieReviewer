@@ -16,7 +16,7 @@ namespace MovieReviewer
         {
             using (var db = new MovieReviewContext())
             {
-                Reviews = db.Reviews.ToList();
+                Reviews = db.Reviews.Include("Movie").ToList();
             }
         }
     }

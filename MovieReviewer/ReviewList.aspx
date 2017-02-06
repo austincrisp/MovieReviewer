@@ -37,7 +37,6 @@
                             aria-expanded="false">Reviews <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="active"><a href="ReviewList.aspx">Review List<span class="sr-only">(current)</span></a></li>
-                            <li><a href="CreateReview.aspx">Create A Review</a></li>
                         </ul>
                     </li>
                 </ul>
